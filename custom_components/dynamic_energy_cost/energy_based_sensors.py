@@ -19,7 +19,7 @@ class BaseEnergyCostSensor(RestoreEntity, SensorEntity):
         self._energy_sensor_id = energy_sensor_id
         self._price_sensor_id = price_sensor_id
         self._state = None
-        self._unit_of_measurement = 'EUR'  # Default to EUR, will update after entity addition
+        self._unit_of_measurement = 'GBP'  # Default to GBP, will update after entity addition
         self._interval = interval
         self._last_energy_reading = None
         self._cumulative_energy_kwh = 0

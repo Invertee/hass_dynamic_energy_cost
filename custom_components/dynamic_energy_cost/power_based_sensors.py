@@ -59,7 +59,7 @@ class RealTimeCostSensor(SensorEntity):
     @property
     def unit_of_measurement(self):
         """Return the unit of measurement."""
-        return 'EUR/h'
+        return 'GBP/h'
 
 
     @callback
@@ -86,7 +86,7 @@ class RealTimeCostSensor(SensorEntity):
             if calculated_cost != self._state:
                 self._state = Decimal(calculated_cost)
                 self.async_write_ha_state()
-                _LOGGER.debug(f"Updated Real Time Energy Cost: {calculated_cost} EUR/h")
+                _LOGGER.debug(f"Updated Real Time Energy Cost: {calculated_cost} GBP/h")
         except ValueError as e:
             _LOGGER.error(f"Error converting sensor data to float: {e}")
 

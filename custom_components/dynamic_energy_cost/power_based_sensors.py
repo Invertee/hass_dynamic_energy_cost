@@ -235,7 +235,7 @@ class UtilityMeterSensor(SensorEntity, RestoreEntity):
     @property
     def unit_of_measurement(self):
         """Return the unit of measurement."""
-        return 'EUR'
+        return 'GBP'
 
     @property
     def device_class(self):

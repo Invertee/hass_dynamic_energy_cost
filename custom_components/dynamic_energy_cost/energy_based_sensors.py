@@ -125,8 +125,8 @@ class BaseEnergyCostSensor(RestoreEntity, SensorEntity):
             _LOGGER.debug(f"Extracted currency '{currency}' from unit of measurement '{price_entity.attributes['unit_of_measurement']}'.")
             return currency
         else:
-            _LOGGER.warning(f"Unit of measurement not available or invalid for sensor {self._price_sensor_id}, defaulting to 'EUR'.")
-        return 'EUR'  # Default to EUR if not found
+            _LOGGER.warning(f"Unit of measurement not available or invalid for sensor {self._price_sensor_id}, defaulting to 'GBP'.")
+        return 'GBP'  # Default to GBP if not found
 
 
     def calculate_next_reset_time(self):
@@ -178,7 +178,7 @@ class BaseEnergyCostSensor(RestoreEntity, SensorEntity):
                 cost_increment = energy_difference * price
                 self._state = (self._state if self._state is not None else 0) + cost_increment
                 self._cumulative_energy_kwh += energy_difference  # Add to the running total of energy
-                _LOGGER.info(f"Energy cost incremented by {cost_increment} EUR, total cost now {self._state} EUR")
+                _LOGGER.info(f"Energy cost incremented by {cost_increment} GBP, total cost now {self._state} GBP")
                 
             elif self._last_energy_reading is not None and current_energy < self._last_energy_reading:
                 _LOGGER.debug("Possible meter reset or rollback detected; recalculating from new base.")
